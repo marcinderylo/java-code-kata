@@ -8,10 +8,13 @@
 package com.blogspot.marcinderylo.kata;
 
 public class BowlingGame {
+    private int score;
+
     public int score() {
-        return 0;
+        return score;
     }
 
     public void roll(int pins) {
+        score += pins;
     }
 }
