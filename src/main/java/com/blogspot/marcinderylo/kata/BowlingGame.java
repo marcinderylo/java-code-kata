@@ -8,13 +8,18 @@
 package com.blogspot.marcinderylo.kata;
 
 public class BowlingGame {
-    private int score;
+    private int[] rolls = new int[21];
+    private int currentRoll = 0;
 
     public int score() {
-        return score;
+        int sum = 0;
+        for (int i = 0; i < rolls.length; i++) {
+            sum += rolls[i];
+        }
+        return sum;
     }
 
     public void roll(int pins) {
-        score += pins;
+        rolls[currentRoll++] = pins;
     }
 }
