@@ -30,7 +30,7 @@ public class BowlingKataTest extends TestCase {
 
 //    public void testOneSpare() throws Exception {
 //        game.roll(6);
-//        game.roll(4);
+//        game.roll(4); // spare
 //        game.roll(3);
 //        rollMany(17, 0);
 //        assertScoreIs(16);

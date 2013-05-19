@@ -12,11 +12,13 @@ public class BowlingGame {
     private int currentRoll = 0;
 
     public int score() {
-        int sum = 0;
-        for (int i = 0; i < rolls.length; i++) {
-            sum += rolls[i];
+        int score = 0;
+        int firstInFrame = 0;
+        for (int frame = 0; frame < 10; frame++) {
+            score += rolls[firstInFrame] + rolls[firstInFrame + 1];
+            firstInFrame += 2;
         }
-        return sum;
+        return score;
     }
 
     public void roll(int pins) {
