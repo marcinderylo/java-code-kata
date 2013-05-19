@@ -28,13 +28,17 @@ public class BowlingKataTest extends TestCase {
         assertScoreIs(20);
     }
 
-//    public void testOneSpare() throws Exception {
-//        game.roll(6);
-//        game.roll(4); // spare
-//        game.roll(3);
-//        rollMany(17, 0);
-//        assertScoreIs(16);
-//    }
+    public void testOneSpare() throws Exception {
+        rollSpare();
+        game.roll(3);
+        rollMany(17, 0);
+        assertScoreIs(16);
+    }
+
+    private void rollSpare() {
+        game.roll(6);
+        game.roll(4);
+    }
 
     private void rollMany(int n, int pins) {
         for (int i = 0; i < n; i++) {
