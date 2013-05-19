@@ -14,33 +14,38 @@ public class BowlingKataTest extends TestCase {
     private BowlingGame game;
 
     @Override
-    public void setUp() throws Exception {
+    public void setUp() {
         game = new BowlingGame();
     }
 
-    public void testGutterGame() throws Exception {
+    public void testGutterGame() {
         rollMany(20, 0);
         assertScoreIs(0);
     }
 
-    public void testAllOnes() throws Exception {
+    public void testAllOnes() {
         rollMany(20, 1);
         assertScoreIs(20);
     }
 
-    public void testOneSpare() throws Exception {
+    public void testOneSpare() {
         rollSpare();
         roll(3);
         rollMany(17, 0);
         assertScoreIs(16);
     }
 
-    public void testOneStrike() throws Exception {
+    public void testOneStrike() {
         rollStrike();
         roll(5);
         roll(3);
         rollMany(16, 0);
         assertScoreIs(26);
+    }
+
+    public void testPerfectGame() {
+        rollMany(12, 10);
+        assertScoreIs(300);
     }
 
     private void roll(int pins) {
